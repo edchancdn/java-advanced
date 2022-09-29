@@ -2,20 +2,21 @@ package interfaces;
 
 import java.util.Objects;
 
-public class Car implements Drivable{
+public class Train implements Drivable {
     private String type;
     private String model;
-    private String color;
+    private String railway;
+    private int trackGauge;
     private int speed;
 
     // Constructor
-    public Car(String type, String model, String color) {
+    public Train(String type, String model, int trackGauge, String railway) {
         this.type = type;
         this.model = model;
-        this.color = color;
+        this.trackGauge = trackGauge;
+        this.railway = railway;
         this.speed = 0;
     }
-
 
     // Getters and Setters
     public String getType() {
@@ -34,12 +35,20 @@ public class Car implements Drivable{
         this.model = model;
     }
 
-    public String getColor() {
-        return color;
+    public int getTrackGauge() {
+        return trackGauge;
     }
 
-    public void setColor(String color) {
-        this.color = color;
+    public void setTrackGauge(int trackGauge) {
+        this.trackGauge = trackGauge;
+    }
+
+    public String getRailway() {
+        return railway;
+    }
+
+    public void setRailway(String railway) {
+        this.railway = railway;
     }
 
     public int getSpeed() {
@@ -53,10 +62,11 @@ public class Car implements Drivable{
     // Override toString, equals, hashCode
     @Override
     public String toString() {
-        return "Car{" +
+        return "Train{" +
                 "type='" + type + '\'' +
                 ", model='" + model + '\'' +
-                ", color='" + color + '\'' +
+                ", trackGauge='" + trackGauge + '\'' +
+                ", railway='" + railway + '\'' +
                 ", speed=" + speed +
                 '}';
     }
@@ -65,16 +75,20 @@ public class Car implements Drivable{
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Car car = (Car) o;
-        return speed == car.speed && type.equals(car.type) && model.equals(car.model) && color.equals(car.color);
+        Train train = (Train) o;
+        return trackGauge == train.trackGauge &&
+                speed == train.speed &&
+                type.equals(train.type) &&
+                model.equals(train.model) &&
+                railway.equals(train.railway);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, model, color, speed);
+        return Objects.hash(type, model, trackGauge, railway, speed);
     }
 
-    // Implement Drivable interface methods
+    // Implement the Drivable interface methods
     @Override
     public void startEngine() {
         System.out.println("Start engine");
@@ -90,13 +104,18 @@ public class Car implements Drivable{
         System.out.println("Stop engine");
     }
 
-    // Car methods
-    public void operateSunroof(boolean open) {
-        if (open) {
-            System.out.println("Open sunroof");
-        } else {
-            System.out.println("Close sunroof");
-        }
+    // Train methods
+    public void connectCaboose() {
+        System.out.println("Connect caboose");
     }
+
+    public void addBogie() {
+        System.out.println("Add bogie");
+    }
+
+    public void removeBogie() {
+        System.out.println("Remove bogie");
+    }
+
 
 }
