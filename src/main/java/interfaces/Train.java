@@ -91,30 +91,30 @@ public class Train implements Drivable {
     // Implement the Drivable interface methods
     @Override
     public void startEngine() {
-        System.out.println("Start engine");
+        System.out.println("Start engine of train");
     }
 
     @Override
     public void changeSpeed(int targetSpeed) {
-        System.out.println("Change speed to " + targetSpeed);
+        System.out.println("Change speed of train to " + targetSpeed);
     }
 
     @Override
     public void stopEngine() {
-        System.out.println("Stop engine");
+        System.out.println("Stop engine of train");
     }
 
     // Train methods
     public void connectCaboose() {
-        System.out.println("Connect caboose");
+        System.out.println("Connect caboose to train");
     }
 
     public void addBogie() {
-        System.out.println("Add bogie");
+        System.out.println("Add bogie to train");
     }
 
     public void removeBogie() {
-        System.out.println("Remove bogie");
+        System.out.println("Remove bogie from train");
     }
 
 

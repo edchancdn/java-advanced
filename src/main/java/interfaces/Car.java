@@ -77,25 +77,25 @@ public class Car implements Drivable{
     // Implement Drivable interface methods
     @Override
     public void startEngine() {
-        System.out.println("Start engine");
+        System.out.println("Start engine of car");
     }
 
     @Override
     public void changeSpeed(int targetSpeed) {
-        System.out.println("Change speed to " + targetSpeed);
+        System.out.println("Change speed of car to " + targetSpeed);
     }
 
     @Override
     public void stopEngine() {
-        System.out.println("Stop engine");
+        System.out.println("Stop engine of car");
     }
 
     // Car methods
     public void operateSunroof(boolean open) {
         if (open) {
-            System.out.println("Open sunroof");
+            System.out.println("Open sunroof of car");
         } else {
-            System.out.println("Close sunroof");
+            System.out.println("Close sunroof of car");
         }
     }
 
