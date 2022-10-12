@@ -13,4 +13,5 @@ public class Main {
         String str2 = scanner.nextLine();
         System.out.println("input: " + str2);
     }
+
 }
