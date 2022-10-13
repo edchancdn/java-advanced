@@ -11,34 +11,39 @@ public class LambdaRunner {
     private int v3;
 
     public static void main(String[] args) {
-        /*
 
         // Simple Lambda expression
+        System.out.println("---loopOne---");
         loopOne();
-        System.out.println("");
+        System.out.println("---loopOneLambda---");
         loopOneLambda();
 
         // Using variables outside of Lambda expression
+        System.out.println("---loopTwo---");
         loopTwo();
-        System.out.println("");
+        System.out.println("---loopTwoLambda---");
         loopTwoLambda();
-        System.out.println("");
+        System.out.println("---loopTwoLambdaPrivateVar---");
         LambdaRunner lr = new LambdaRunner();
         lr.loopTwoLambdaPrivateVar();
 
         // Store lambda expression in a variable
+        System.out.println("---loopThreeLambda---");
         loopThreeLambda();
 
         // Lambda method reference
+        System.out.println("---loopFourLambdaMethodRef---");
         loopFourLambdaMethodRef();
 
         // Lambda expression with objects
+        System.out.println("---loopFiveLambdaObj---");
         loopFiveLambdaObj();
 
         // Custom functional interface
-         */
-
+        System.out.println("---loopSixCustomFuncInterface---");
         loopSixCustomFuncInterface();
+
+
 
         /* Session: 2022-10-12
 
@@ -102,7 +107,6 @@ public class LambdaRunner {
         greets.add(new GreetPerson("How are you", ask));
         greets.add(new GreetPerson("How was your day", ask));
         greets.forEach(LambdaRunner::printGreeting);
-
     }
 
     private static void printGreeting(GreetPerson person) {
@@ -113,7 +117,6 @@ public class LambdaRunner {
         String result = format.apply(str);
         System.out.println(result);
     }
-
     public static void loopFiveLambdaObj() {
         List<Car> cars = buildObjList();
 
@@ -147,10 +150,10 @@ public class LambdaRunner {
         // Use Consumer interface to store a lambda expression into a variable.
         // Use Method reference.
         // Syntax -  Class::referencedMethod
-        Consumer<Integer> mthd = LambdaRunner::printGreeting;
         // Consumer is a functional interface that requires a single argument and returns no results,
         //   method printGreeting() is created to match this signature.
         // Note how method loopThreeLambda() uses an inline lambda expression of the same output.
+        Consumer<Integer> mthd = LambdaRunner::printGreeting;
         nums.forEach(mthd);
 
         System.out.println("");
