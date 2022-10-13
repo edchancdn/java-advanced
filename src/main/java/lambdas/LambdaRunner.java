@@ -3,8 +3,12 @@ package lambdas;
 import interfaces.Car;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.function.BiFunction;
+import java.util.function.BiPredicate;
 import java.util.function.Consumer;
+import java.util.function.Supplier;
 
 public class LambdaRunner {
 
@@ -47,6 +51,11 @@ public class LambdaRunner {
 
         /* Session: 2022-10-12
 
+         */
+
+        System.out.println("");
+        System.out.println("---Advanced Java Session: 2022-10-12---");
+
         StringFunction exclaim = (s) -> s + "!";
         printFormatted("Hello", exclaim);
 
@@ -75,8 +84,6 @@ public class LambdaRunner {
         // inferred type
         Supplier<?> supplier = Collections::emptyMap;
         System.out.println("supplier value: " + supplier.get());
-
-         */
 
     }
 
