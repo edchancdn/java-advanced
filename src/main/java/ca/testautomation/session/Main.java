@@ -1,4 +1,4 @@
-package org.example;
+package ca.testautomation.session;
 
 import java.util.Scanner;
 
