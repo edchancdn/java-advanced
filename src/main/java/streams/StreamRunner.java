@@ -66,6 +66,11 @@ public class StreamRunner {
         return dList;
     }
 
+    public static List<Dish> VeggiesStream(List<Dish> dishes) {
+        List<Dish> veggies = dishes.stream().filter(d -> d.getType() == DishType.VEG).collect(toList());
+        return veggies;
+    }
+
     public static List<Dish> nonVeggiesLoop(List<Dish> dishes) {
         List<Dish> dList = new ArrayList<>();
         for (Dish d :dishes) {

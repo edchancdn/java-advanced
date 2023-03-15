@@ -16,6 +16,8 @@ public class LambdaRunner {
 
     public static void main(String[] args) {
 
+        /* Session 1
+
         // Simple Lambda expression
         System.out.println("---loopOne---");
         loopOne();
@@ -47,11 +49,11 @@ public class LambdaRunner {
         System.out.println("---loopSixCustomFuncInterface---");
         loopSixCustomFuncInterface();
 
-
-
-        /* Session: 2022-10-12
-
          */
+
+
+
+        /* Session: 2 - 2022-10-12
 
         System.out.println("");
         System.out.println("---Advanced Java Session: 2022-10-12---");
@@ -85,6 +87,30 @@ public class LambdaRunner {
         Supplier<?> supplier = Collections::emptyMap;
         System.out.println("supplier value: " + supplier.get());
 
+        */
+
+
+
+        /* Session: 3 - 2023-03-15
+
+         */
+
+        // ----- Supplier
+
+        // Supplies a String
+        Supplier<String> str = () -> "Hello";
+        System.out.println(str.get());
+
+        // Supplies a Car object
+        Supplier<Car> carSupplier = () -> new Car("Audi", "A4", "red");
+        Car car = carSupplier.get();
+        System.out.println(car);
+
+        // ----- Consumer
+        // Consumes a string
+        Consumer<String> stringConsumer = x -> System.out.println("Hello " + x);
+        stringConsumer.accept("Mr Smith");
+
     }
 
     public String refMethod(String s) {
@@ -117,6 +143,7 @@ public class LambdaRunner {
     }
 
     private static void printGreeting(GreetPerson person) {
+
         printFormatted(person.greeting, person.type);
     }
 
@@ -203,6 +230,9 @@ public class LambdaRunner {
         nums.forEach(n -> {
             // lambda expression can see a variable outside if it is effectively final.
             int v2 = v1 + n;
+            if (v2 > 15) {
+                System.out.println("greater than 15: " + v2);
+            }
             System.out.println(v2);
         });
     }

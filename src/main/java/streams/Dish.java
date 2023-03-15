@@ -13,7 +13,7 @@ import java.util.List;
 public class Dish {
     int dishId;
     List<String> ingredients;
-    double price;
+    double   price;
     int preparationTime;
     DishType type;
     String name;
